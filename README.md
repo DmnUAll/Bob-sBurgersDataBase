@@ -6,6 +6,7 @@ An app also has a machine learning model that will predict which Bob's Burgers c
 
 I'v made this project for educational purposes, to use it as a reference for SwiftUI functionality.
 The main functionality that was applied in this project are described below.
+
 Views:
 - Text (.font)
 - Color (.ignoresSafeArea)
@@ -20,10 +21,10 @@ Extensions for:
 - Image
 
 Useful functionality:
-- String Catalog (Localizable for En and Ru with adaptive fonts)
+- String Catalog (Localizable for En and Ru with adaptive fonts)\
  https://developer.apple.com/documentation/Xcode/localizing-and-varying-text-with-a-string-catalog
 
-This project contains almost everything I know at the moment about SwiftUI and Swift programming.\
+This project contains almost everything I know at the moment about SwiftUI and Swift programming.
 
 Disclaimer:
 The project was made for educational purposes only.
