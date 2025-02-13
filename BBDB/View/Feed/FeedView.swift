@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct FeedView: View {
+    @Environment(ContentView.ViewModel.self) var viewModel
     
     var body: some View {
+        @Bindable var viewModel = viewModel
+        
         NavigationStack {
             ZStack {
                 BackgroundView(
@@ -24,4 +27,5 @@ struct FeedView: View {
 
 #Preview {
     FeedView()
+        .environment(ContentView().viewModel)
 }
