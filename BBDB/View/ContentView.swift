@@ -10,18 +10,20 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query var characters: Characters
+    @Query(sort: \CartoonCharacter.id) var characters: Characters
     
     @State private var viewModel = ViewModel()
-    
-    init() {
-        viewModel.load(modelContext)
-    }
-        
+   
     var body: some View {
         if viewModel.isLoading {
             LoadingView()
+                .onAppear {
+                    viewModel.load(modelContext: modelContext)
+                }
         } else {
+            Button("Print") {
+                print(characters.count)
+            }
             TabView {
                 Group {
                     FeedView()
@@ -50,10 +52,8 @@ struct ContentView: View {
                         }
                 }
             }
-//            .environment(viewModel)
             .tint(.bbdbBlack)
         }
-        
     }
 }
 

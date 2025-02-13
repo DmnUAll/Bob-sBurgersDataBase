@@ -114,6 +114,7 @@ class CartoonCharacter: Codable {
 
 typealias Characters = [CartoonCharacter]
 
+
 #Preview {
     ContentView()
 }

@@ -33,7 +33,3 @@ struct BackgroundView: View {
         }
     }
 }
-
-#Preview {
-    ContentView()
-}

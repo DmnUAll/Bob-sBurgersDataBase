@@ -19,11 +19,16 @@ Views:
 Extensions for:
 - Font
 - Image
+- Date
+- UserDefaults
 
 Useful functionality:
 - String Catalog (Localizable for En and Ru with adaptive fonts)\
  https://developer.apple.com/documentation/Xcode/localizing-and-varying-text-with-a-string-catalog
-- Networking
+- Date (.now, .distance, .distantPast)
+- Networking (URL, URLSession)
+- UserDefaults (.set, .data)
+- SwiftData (.modelContainer, @Environment(\.modelContext), @Query, .insert )
 
 This project contains almost everything I know at the moment about SwiftUI and Swift programming.
 

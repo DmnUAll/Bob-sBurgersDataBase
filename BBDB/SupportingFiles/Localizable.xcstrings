@@ -1,9 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "123" : {
-
-    },
     "Favorites" : {
       "localizations" : {
         "ru" : {
@@ -33,6 +30,9 @@
           }
         }
       }
+    },
+    "Print" : {
+
     },
     "Settings" : {
       "localizations" : {

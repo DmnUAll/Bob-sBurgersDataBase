@@ -8,19 +8,41 @@
 import SwiftData
 import SwiftUI
 
-
 extension ContentView {
     @Observable
     class ViewModel {
+        private var lastLoadedDate: Date {
+            get {
+                let dateString = UserDefaults.loadData(withKey: .lastLoadedDate) as String
+                if dateString.isEmpty {
+                    return Date.distantPast
+                } else {
+                    return Date.convertStringToDate(dateString)
+                }
+            }
+            set {
+                let dateString = newValue.convertDateToString()
+                UserDefaults.saveData(dateString, withKey: .lastLoadedDate)
+            }
+        }
         
         var isLoading: Bool = true
         
-        func load(_ modelContext: ModelContext) {
-            Task {
-                let loadedCharacters = await Networking.loadData(fromLink: .allCharacters) ?? [] as Characters
-                loadedCharacters.forEach { character in
-                    modelContext.insert(character)
+        @MainActor
+        func load(modelContext: ModelContext) {
+            if lastLoadedDate.distance(to: .now) > 86400 {
+                Task {
+                    let characters = await Networking.loadData(fromLink: .allCharacters) ?? [] as Characters
+                    
+                    try? modelContext.delete(model: CartoonCharacter.self)
+
+                    characters.forEach { character in
+                        modelContext.insert(character)
+                    }
+                    lastLoadedDate = .now
+                    isLoading = false
                 }
+            } else {
                 isLoading = false
             }
         }

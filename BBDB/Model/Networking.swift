@@ -33,7 +33,3 @@ struct Networking {
         return nil
     }
 }
-
-#Preview {
-    ContentView()
-}
