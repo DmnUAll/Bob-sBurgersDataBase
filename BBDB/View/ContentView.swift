@@ -11,14 +11,15 @@ struct ContentView: View {
     @State var viewModel = ViewModel()
     
     var body: some View {
-        ZStack {
+        if viewModel.isLoading {
+            LoadingView()
+        } else {
             TabView {
                 Group {
                     FeedView()
                         .tabItem {
                             Image.convertToIcon(named: "feedIcon", withSize: 48)
                         }
-                        .environment(viewModel)
                     
                     MainMenuView()
                         .tabItem {
@@ -41,8 +42,11 @@ struct ContentView: View {
                         }
                 }
             }
+            .environment(viewModel)
+            .tint(.bbdbBlack)
+            
         }
-        .tint(.bbdbBlack)
+        
     }
 }
 

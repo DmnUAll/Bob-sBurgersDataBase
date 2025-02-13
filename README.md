@@ -10,7 +10,7 @@ The main functionality that was applied in this project are described below.
 Views:
 - Text (.font)
 - Color (.ignoresSafeArea)
-- Image (.resizable, .scaledToFill, .opacity, .ignoresSafeArea)
+- Image (.resizable, .scaledToFill, .scaledToFit, .frame, .rotationEffect, .opacity, .ignoresSafeArea, .onAppear, withAnimation)
 - ZStack
 - TabView (.tabItem, .toolbarBackground)
 - NavigationStack (.toolbar)
@@ -23,6 +23,7 @@ Extensions for:
 Useful functionality:
 - String Catalog (Localizable for En and Ru with adaptive fonts)\
  https://developer.apple.com/documentation/Xcode/localizing-and-varying-text-with-a-string-catalog
+- Networking
 
 This project contains almost everything I know at the moment about SwiftUI and Swift programming.
 

@@ -11,6 +11,7 @@ extension ContentView {
     @Observable
     class ViewModel {
         private(set) var characters: Characters = []
+        
         var isLoading: Bool = true
         
         init() {
