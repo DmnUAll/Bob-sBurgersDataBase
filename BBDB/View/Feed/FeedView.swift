@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct FeedView: View {
-    @Environment(ContentView.ViewModel.self) var viewModel
+//    @Environment(ContentView.ViewModel.self) var viewModel
     
     var body: some View {
-        @Bindable var viewModel = viewModel
+//        @Bindable var viewModel = viewModel
         
         NavigationStack {
             ZStack {
@@ -22,10 +22,12 @@ struct FeedView: View {
                 )
             }
         }
+//        .onAppear {
+//            print(viewModel.characters.count)
+//        }
     }
 }
 
 #Preview {
     FeedView()
-        .environment(ContentView().viewModel)
 }

@@ -5,11 +5,19 @@
 //  Created by Илья Валито on 11.02.2025.
 //
 
+import SwiftData
 import SwiftUI
 
 struct ContentView: View {
-    @State var viewModel = ViewModel()
+    @Environment(\.modelContext) private var modelContext
+    @Query var characters: Characters
     
+    @State private var viewModel = ViewModel()
+    
+    init() {
+        viewModel.load(modelContext)
+    }
+        
     var body: some View {
         if viewModel.isLoading {
             LoadingView()
@@ -42,9 +50,8 @@ struct ContentView: View {
                         }
                 }
             }
-            .environment(viewModel)
+//            .environment(viewModel)
             .tint(.bbdbBlack)
-            
         }
         
     }
