@@ -25,9 +25,9 @@ extension Font {
     static func bobsBurgersRu(style: FontType, size: CGFloat) -> Font {
         switch style {
         case .filled:
-                .custom("Banco", size: size)
+                .custom("Banco", size: size - 8)
         case .empty:
-                .custom("CampusOtl", size: size)
+                .custom("CampusOtl", size: size - 6)
         }
     }
     

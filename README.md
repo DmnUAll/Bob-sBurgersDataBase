@@ -8,13 +8,19 @@ I'v made this project for educational purposes, to use it as a reference for Swi
 The main functionality that was applied in this project are described below.
 
 Views:
-- Text (.font)
+- Spacer()
+- Text (.font, .padding, .background, .clipShape)
 - Color (.ignoresSafeArea)
-- Image (.resizable, .scaledToFill, .scaledToFit, .frame, .rotationEffect, .opacity, .ignoresSafeArea, .onAppear, withAnimation)
-- ZStack
-- TabView (.tabItem, .toolbarBackground)
-- NavigationStack (.toolbar)
+- RoundedRectangle (.stroke)
+- Image (.resizable, .scaledToFill, .scaledToFit, .frame, .rotationEffect, .opacity, .ignoresSafeArea, .onAppear, withAnimation, .renderingMode, .foregroundColor)
+- AsyncImage (.frame, .background, .clipShape, .overlay)
+- Link
+- ZStack, VStack, HStack (.containerRelativeFrame, .padding, .background, .opacity, .clipShape, .overlay, .padding, .font, .onAppear)
+- ForEach
+- TabView (.accentColor, .frame, .padding, .tabItem, .toolbarBackground, .tabViewStyle)
+- NavigationStack (.toolbar, .onAppear)
 - ToolbarItem
+- ScrollView (.containerRelativeFrame, .padding, .background, .clipShape)
 
 Extensions for:
 - Font

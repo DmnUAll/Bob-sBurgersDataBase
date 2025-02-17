@@ -23,13 +23,13 @@ struct BackgroundView: View {
                 .scaledToFill()
                 .opacity(0.4)
                 .ignoresSafeArea()
-        
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    titleText
-                        .font(.localizedFont(style: .filled, size: 36))
-                }
+        }
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                titleText
+                    .font(.localizedFont(style: .filled, size: 36))
             }
         }
+        .background(.bbdbRed)
     }
 }

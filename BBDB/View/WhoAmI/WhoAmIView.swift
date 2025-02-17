@@ -5,9 +5,11 @@
 //  Created by Илья Валито on 11.02.2025.
 //
 
+import SwiftData
 import SwiftUI
 
 struct WhoAmIView: View {
+    @Environment(\.modelContext) private var modelContext
     
     var body: some View {
         NavigationStack {

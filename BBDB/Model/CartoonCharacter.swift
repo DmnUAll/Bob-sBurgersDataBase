@@ -7,10 +7,9 @@
 
 import Foundation
 import SwiftData
-import SwiftUI
 
 @Model
-class CartoonCharacter: Codable {
+final class CartoonCharacter: Codable {
     enum CodingKeys: String, CodingKey {
         case id
         case name
@@ -114,7 +113,43 @@ class CartoonCharacter: Codable {
 
 typealias Characters = [CartoonCharacter]
 
-
-#Preview {
-    ContentView()
+extension CartoonCharacter {
+    static let example = CartoonCharacter(
+        id: 666,
+        name: "Rusty Shackleford",
+        relatives: [
+            Relative(
+                id: "777",
+                name: "Dale Gribble",
+                relationship: "Secretary",
+                wikiURL: "https://static.wikia.nocookie.net/kingofthehill/images/a/a7/Dale_Gribble.png/revision/latest/zoom-crop/width/280/height/160?cb=20131231145446",
+                url: "https://kingofthehill.fandom.com/wiki/Rusty_Shackleford_(Real)"
+            ),
+            Relative(
+                id: "888",
+                name: "Nancy Gribble",
+                relationship: "Wife",
+                wikiURL: "https://static.wikia.nocookie.net/kingofthehill/images/a/a7/Dale_Gribble.png/revision/latest/zoom-crop/width/280/height/160?cb=20131231145446",
+                url: "https://kingofthehill.fandom.com/wiki/Rusty_Shackleford_(Real)"
+            ),
+            Relative(
+                id: "999",
+                name: "Joseph Gribble",
+                relationship: "Son",
+                wikiURL: "https://static.wikia.nocookie.net/kingofthehill/images/a/a7/Dale_Gribble.png/revision/latest/zoom-crop/width/280/height/160?cb=20131231145446",
+                url: "https://kingofthehill.fandom.com/wiki/Rusty_Shackleford_(Real)"
+            )
+        ],
+        wikiURL: "https://kingofthehill.fandom.com/wiki/Rusty_Shackleford_(Real)",
+        image: "https://static.wikia.nocookie.net/kingofthehill/images/a/a7/Dale_Gribble.png/revision/latest/zoom-crop/width/280/height/160?cb=20131231145446",
+        gender: "Male",
+        hair: "Bald",
+        occupation: "Cowboy",
+        allOccupations: ["Secret agent", "Bug killer"],
+        firstEpisode: "S01E01",
+        voicedBy: "Me Lol Kek",
+        url: "https://static.wikia.nocookie.net/kingofthehill/images/a/a7/Dale_Gribble.png/revision/latest/zoom-crop/width/280/height/160?cb=20131231145446",
+        age: "66",
+        isFavorite: true
+    )
 }

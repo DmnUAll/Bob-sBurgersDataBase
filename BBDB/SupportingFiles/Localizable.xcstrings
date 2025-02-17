@@ -1,6 +1,18 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    " %lld " : {
+
+    },
+    "%@" : {
+
+    },
+    "Age:" : {
+
+    },
+    "Character's Wiki" : {
+
+    },
     "Favorites" : {
       "localizations" : {
         "ru" : {
@@ -21,6 +33,15 @@
         }
       }
     },
+    "First episode:" : {
+
+    },
+    "Gender:" : {
+
+    },
+    "Hair:" : {
+
+    },
     "Main Menu" : {
       "localizations" : {
         "ru" : {
@@ -31,7 +52,16 @@
         }
       }
     },
-    "Print" : {
+    "Not found" : {
+
+    },
+    "Occupation:" : {
+
+    },
+    "Other occupations: " : {
+
+    },
+    "Relatives: " : {
 
     },
     "Settings" : {
@@ -43,6 +73,12 @@
           }
         }
       }
+    },
+    "Unknown" : {
+
+    },
+    "Voiced by:" : {
+
     },
     "Who Am I?" : {
       "localizations" : {

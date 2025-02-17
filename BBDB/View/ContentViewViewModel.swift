@@ -10,7 +10,7 @@ import SwiftUI
 
 extension ContentView {
     @Observable
-    class ViewModel {
+    final class ViewModel {
         private var lastLoadedDate: Date {
             get {
                 let dateString = UserDefaults.loadData(withKey: .lastLoadedDate) as String
