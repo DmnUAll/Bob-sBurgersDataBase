@@ -13,7 +13,7 @@ extension ContentView {
     final class ViewModel {
         private var lastLoadedDate: Date {
             get {
-                let dateString = UserDefaults.loadData(withKey: .lastLoadedDate) as String
+                let dateString = UserDefaults.loadData(withKey: .charactersLastLoadedDate) as String
                 if dateString.isEmpty {
                     return Date.distantPast
                 } else {
@@ -22,7 +22,7 @@ extension ContentView {
             }
             set {
                 let dateString = newValue.convertDateToString()
-                UserDefaults.saveData(dateString, withKey: .lastLoadedDate)
+                UserDefaults.saveData(dateString, withKey: .charactersLastLoadedDate)
             }
         }
         

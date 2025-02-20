@@ -9,7 +9,7 @@ import Foundation
 
 extension UserDefaults {
     enum UDKey: String {
-        case lastLoadedDate
+        case charactersLastLoadedDate
     }
     
     static func saveData<T: Encodable>(_ data: T, withKey key: UDKey) {
