@@ -15,10 +15,15 @@ struct BBDBApp: App {
         do {
             let characterConfig = ModelConfiguration("characterDatabase", schema: Schema([CartoonCharacter.self]))
             let episodeConfig = ModelConfiguration("episodeDatabase", schema: Schema([Episode.self]))
+            let nextDoorStoreConfig = ModelConfiguration("nextDoorStoreDatabase", schema: Schema([NextDoorStore.self]))
+            let pestControlTruckConfig = ModelConfiguration("pestControlTruckDatabase", schema: Schema([PestControlTruck.self]))
+            let endCreditsSequenceConfig = ModelConfiguration("endCreditsSequenceDatabase", schema: Schema([EndCreditsSequence.self]))
+            let burgerOfTheDayConfig = ModelConfiguration("burgerOfTheDayDatabase", schema: Schema([BurgerOfTheDay.self]))
+
             
             container = try ModelContainer(
-                for: CartoonCharacter.self, Episode.self,
-                configurations: characterConfig, episodeConfig
+                for: CartoonCharacter.self, Episode.self, NextDoorStore.self, PestControlTruck.self, EndCreditsSequence.self, BurgerOfTheDay.self,
+                configurations: characterConfig, episodeConfig, nextDoorStoreConfig, pestControlTruckConfig, endCreditsSequenceConfig, burgerOfTheDayConfig
             )
         } catch {
             fatalError("Failed to configure SwiftData container.")
@@ -29,6 +34,6 @@ struct BBDBApp: App {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: CartoonCharacter.self)
+        .modelContainer(container)
     }
 }

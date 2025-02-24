@@ -15,7 +15,6 @@ extension FeedView {
         func generateFeed(fromCharacters characters: Characters) {
             charactersFeed = Array(characters.shuffled()[0...4])
         }
-        
     }
 }
 

@@ -10,6 +10,11 @@ import Foundation
 extension UserDefaults {
     enum UDKey: String {
         case charactersLastLoadedDate
+        case episodesLastLoadedDate
+        case nextDoorStoresLoadedDate
+        case pestControlTrucksLoadedDate
+        case endCreditsSequenceLoadedDate
+        case burgersOfTheDayLoadedDate
     }
     
     static func saveData<T: Encodable>(_ data: T, withKey key: UDKey) {

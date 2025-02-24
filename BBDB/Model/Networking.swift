@@ -10,6 +10,11 @@ import Foundation
 struct Networking {
     enum Link: String {
         case allCharacters = "https://bobsburgers-api.herokuapp.com/characters/"
+        case allEpisodes = "https://bobsburgers-api.herokuapp.com/episodes/"
+        case allNextDoorStores = "https://bobsburgers-api.herokuapp.com/storeNextDoor/"
+        case allPestControlTrucks = "https://bobsburgers-api.herokuapp.com/pestControlTruck/"
+        case allEndCreditsSequences = "https://bobsburgers-api.herokuapp.com/endCreditsSequence/"
+        case allBurgersOfTheDay = "https://bobsburgers-api.herokuapp.com/burgerOfTheDay/"
     }
     
     private init() { }

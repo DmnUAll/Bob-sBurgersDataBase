@@ -11,26 +11,11 @@ import SwiftUI
 extension ContentView {
     @Observable
     final class ViewModel {
-        private var lastLoadedDate: Date {
-            get {
-                let dateString = UserDefaults.loadData(withKey: .charactersLastLoadedDate) as String
-                if dateString.isEmpty {
-                    return Date.distantPast
-                } else {
-                    return Date.convertStringToDate(dateString)
-                }
-            }
-            set {
-                let dateString = newValue.convertDateToString()
-                UserDefaults.saveData(dateString, withKey: .charactersLastLoadedDate)
-            }
-        }
-        
         var isLoading: Bool = true
         
         @MainActor
         func load(modelContext: ModelContext) {
-            if lastLoadedDate.distance(to: .now) > 86400 {
+            if Date.charactersLastLoadedDate.distance(to: .now) > 86400 {
                 Task {
                     let characters = await Networking.loadData(fromLink: .allCharacters) ?? [] as Characters
                     
@@ -39,7 +24,7 @@ extension ContentView {
                     characters.forEach { character in
                         modelContext.insert(character)
                     }
-                    lastLoadedDate = .now
+                    Date.charactersLastLoadedDate = .now
                     isLoading = false
                 }
             } else {

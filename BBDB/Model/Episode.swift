@@ -13,7 +13,7 @@ class Episode: Codable {
     enum CodingKeys: String, CodingKey {
         case id
         case name
-        case episodeDescription
+        case episodeDescription = "description"
         case productionCode
         case airDate
         case season
